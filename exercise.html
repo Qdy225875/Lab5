@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Background Color</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        // 设置背景颜色为绿色
+        ctx.fillStyle="rgb(144, 238, 144)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        //绘制圆
+        ctx.beginPath(); // 开始新路径
+        ctx.ellipse(200, 200, 160, 160, Math.PI / 4, 0, Math.PI * 2); 
+        ctx.fillStyle = "rgb(255, 255, 0)";
+        ctx.fill();
+        ctx.stroke();
+        //鼻子
+        ctx.beginPath();
+        ctx.moveTo(200,200);
+        ctx.lineTo(200,245);
+        ctx.stroke(); 
+        //眼睛
+        ctx.beginPath();
+        ctx.ellipse(130, 150, 15, 15, Math.PI / 4, 0, Math.PI * 2); 
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.ellipse(270, 150, 15, 15, Math.PI / 4, 0, Math.PI * 2); 
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        ctx.stroke();
+        //嘴
+        ctx.beginPath();
+        ctx.ellipse(200, 250, 60, 53, 0, 0, Math.PI, false);
+        ctx.stroke();
+        //标题
+        ctx.fillStyle = '#003300'; // 设置文字颜色
+        ctx.font = 'bold 26px Arial'; // 设置字体和大小
+        ctx.fillText('The Canvas brought me to life!', 6, 390); // 绘制文本
+    </script>
+</body>
+</html>
